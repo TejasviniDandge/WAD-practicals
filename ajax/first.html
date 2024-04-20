@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#submitbtn').click(function(){
+                data={
+                    name:$('#name').val(),
+                    email:$('#email').val(),
+                    password:$('#password').val()
+                }
+                const obj = JSON.stringify(data);
+                localStorage.setItem("formJSON",obj);
+               
+
+            }
+            );
+        }
+        );
+        
+    </script>
+</head>
+
+<body>
+    <h2>Fill up this form</h2>
+    <div class="first">
+        <form action="second.html"methods ="POST">
+    
+                <label>Enter name:<input type="text" id="name" /></label><br>
+                <label>Enter email:<input type="email" id="email" /></label><br>
+                <label>Enter password:<input type="password" id="password" /></label><br>
+                <button type="submit" id="submitbtn">Submit</button>
+           
+
+        </form>
+    </div>
+</body>
+
+</html>
